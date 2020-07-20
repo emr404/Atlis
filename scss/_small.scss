@@ -66,57 +66,7 @@
         }
     }
 
-    .nav-links {
-        z-index: 2;
-        overflow-x: hidden;
-        background-color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 70vh;
-        flex-direction: column;
-        position: absolute;
-        top: 12vh;
-        right: 0;
-        border-top: 1px solid $accent-color;
-        width: 100% !important;
-        transform: translateX(-100%);
-        transition: 0.4s ease;
 
-        li {
-            padding: 0 1%;
-            font-size: 1.5em;
-            list-style: none;
-
-            a {
-                font-size: .8em;
-                text-decoration: none;
-                color: $accent-color;
-            }
-        }
-    }
-
-    .active {
-        transform: translateX(0%);
-
-    }
-
-    .toggle {
-        .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-            transition: 0.5s ease;
-
-        }
-
-        .line2 {
-            opacity: 0;
-        }
-
-        .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-            transition: 0.5s ease;
-        }
-    }
 
     //================= INTRODUCTORY SECTION =================
     .intro-container {
@@ -471,6 +421,27 @@
         }
     }
 
+    .active {
+        transform: translateX(0%);
+
+    }
+
+    .toggle {
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+            transition: 0.5s ease;
+
+        }
+
+        .line2 {
+            opacity: 0;
+        }
+
+        .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+            transition: 0.5s ease;
+        }
+    }
 
 
 
