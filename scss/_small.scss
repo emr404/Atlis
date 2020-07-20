@@ -1,0 +1,121 @@
+@media (min-width:0px) and (max-width:485px) {
+    html {
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 4;
+        background-color: $primary-color;
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 12vh;
+
+
+
+            .burger {
+
+                display: block;
+                transition: 1s ease;
+
+                .line2 {
+                    width: 12px;
+                }
+
+                div {
+                    margin: 5px;
+                    height: 3px;
+                    width: 25px;
+                    background-color: $accent-color;
+
+
+                }
+            }
+
+            .logo {
+                height: 8vh;
+                /* max-height: 7vh; */
+            }
+
+            .cart-profile {
+                display: flex;
+                width: 13vw;
+                justify-content: space-around;
+
+                label {
+                    font-size: 28px;
+                }
+
+                img {
+                    display: flex;
+                    height: 3vh;
+
+
+                }
+            }
+        }
+    }
+
+    .nav-links {
+        z-index: 2;
+        overflow-x: hidden;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70vh;
+        flex-direction: column;
+        position: absolute;
+        top: 12vh;
+        right: 0;
+        border-top: 1px solid $accent-color;
+        width: 100% !important;
+        transform: translateX(-100%);
+        transition: 0.4s ease;
+
+        li {
+            padding: 0 1%;
+            font-size: 1.5em;
+            list-style: none;
+
+            a {
+                font-size: .8em;
+                text-decoration: none;
+                color: $accent-color;
+            }
+        }
+    }
+
+    .active {
+        transform: translateX(0%);
+
+    }
+
+    .toggle {
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+            transition: 0.5s ease;
+
+        }
+
+        .line2 {
+            opacity: 0;
+        }
+
+        .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+            transition: 0.5s ease;
+        }
+    }
+
+}
