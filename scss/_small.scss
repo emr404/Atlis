@@ -20,7 +20,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            min-height: 10vh;
+            height: 10vh;
 
 
 
@@ -353,14 +353,15 @@
 
     /*===============FOOTER SECTION ======================================*/
     .info-container {
+        min-height: 30vh;
         background-color: #0a0a0a;
         color: white;
         display: grid;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 1em;
+        gap: 3em;
         justify-content: space-around;
         align-items: center;
-        padding: 2%;
+        padding: 5%;
         bottom: 0;
 
         .company {
@@ -401,7 +402,7 @@
         height: 70vh;
         flex-direction: column;
         position: absolute;
-        top: 12vh;
+        top: 10vh;
         right: 0;
         border-top: 1px solid $accent-color;
         width: 100% !important;
