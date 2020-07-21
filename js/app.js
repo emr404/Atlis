@@ -4,3 +4,22 @@ burger.addEventListener('click', () => {
     nav.classList.toggle('active');
     burger.classList.toggle('toggle');
 })
+
+countDown = () => {
+    const countDownDate = new Date("Sep 5, 2020 17:00:00").getTime();
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const difference = countDownDate - now;
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        document.querySelector(".counter").innerHTML = days + "D " + hours + "H "
+            + minutes + "M " + seconds + "S ";
+        if (difference < 0) {
+            clearInterval(interval);
+            document.querySelector(".counter").innerHTML = "No deals available";
+        }
+    }, 1000);
+}
+countDown();
