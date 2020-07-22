@@ -45,3 +45,28 @@ imageBackground.forEach(image => {
     }
     )
 });
+
+// Counter for quantity of items
+counter = () => {
+    const increase = document.querySelectorAll('.add');
+    const decrease = document.querySelectorAll('.minus');
+    increase.forEach(increment => {
+        increment.addEventListener('click', (e) => {
+            e.target.parentElement.childNodes[2].innerHTML++;
+
+        })
+
+    })
+    decrease.forEach(decrement => {
+        decrement.addEventListener('click', (e) => {
+            e.target.parentElement.childNodes[2].innerHTML--;
+            if (e.target.parentElement.childNodes[2].innerHTML < 1) {
+                e.target.parentElement.childNodes[2].innerHTML = 1;
+
+            }
+
+        })
+
+    })
+}
+counter();
