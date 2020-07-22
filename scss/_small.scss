@@ -71,7 +71,7 @@
     //================= INTRODUCTORY SECTION =================
     .intro-container {
         position: relative;
-        min-height: 16vh;
+        min-height: 12vh;
         display: flex;
         flex-direction: column-reverse;
 
@@ -82,11 +82,14 @@
             bottom: 0;
             left: 0;
             text-align: center;
-            height: 8vh;
+            height: 6vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        /* .counter::before{
+            content: 'Summer Sales Expire in:  ';
+        } */
 
         h1 {
             display: none;
@@ -99,7 +102,7 @@
         .voucher {
             position: absolute;
             background-color: red;
-            height: 8vh;
+            height: 6vh;
             width: 100%;
             top: 0;
             right: 0;
@@ -231,6 +234,7 @@
                     h3 {
                         margin-top: 2%;
                         margin-left: 5%;
+                        font-weight: 500;
                         /* font-size: 16px; */
 
                         .item-color,
@@ -263,7 +267,7 @@
                     }
 
                     .item-name {
-                        font-weight: bold;
+                        font-weight: 500;
                         margin-left: 5%;
                     }
                 }
@@ -360,14 +364,14 @@
             color: $accent-color;
             font-size: 30px;
             font-weight: 400;
-            margin-left: 5%;
+            margin-left: 2%;
             padding-top: 2%;
         }
 
         .category-items-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            width: 90%;
+            width: 95%;
             justify-content: center;
             margin: 3% auto;
 

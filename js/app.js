@@ -1,10 +1,13 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
+
+// Navigation Bar
 burger.addEventListener('click', () => {
     nav.classList.toggle('active');
     burger.classList.toggle('toggle');
 })
 
+//Count down clock for summer sales
 countDown = () => {
     const countDownDate = new Date("Sep 5, 2020 17:00:00").getTime();
     const interval = setInterval(() => {
@@ -23,3 +26,22 @@ countDown = () => {
     }, 1000);
 }
 countDown();
+
+
+//Hover effect for furniture categories
+const imageBackground = document.querySelectorAll('.category-item-container');
+imageBackground.forEach(image => {
+    image.addEventListener('mouseover', e => {
+        /* console.log(e.target.nextElementSibling.innerHTML); */
+        image.childNodes[1].classList.add('img-darken');
+    }
+    )
+});
+
+imageBackground.forEach(image => {
+    image.addEventListener('mouseout', () => {
+        image.childNodes[1].classList.remove('img-darken');
+
+    }
+    )
+});
