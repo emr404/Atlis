@@ -87,6 +87,7 @@
             align-items: center;
             justify-content: center;
         }
+
         /* .counter::before{
             content: 'Summer Sales Expire in:  ';
         } */
@@ -355,10 +356,7 @@
 
     }
 
-    /******************
-                    CATEGORIES PAGE
-
-******************************/
+    //====================CATEGORIES PAGE===============
     .category-container {
         h1 {
             color: $accent-color;
@@ -469,6 +467,134 @@
                     background-size: cover;
                     background-position: center;
                     width: 100%;
+
+                }
+
+            }
+        }
+    }
+
+    /******************
+                    SHOPPING PAGE
+
+******************************/
+    .main-shop {
+        margin: 1% auto 10% auto;
+        /* background-color: red; */
+
+        .shop-heading {
+            color: $accent-color;
+            font-size: 40px;
+            margin-left: 10%;
+            margin-top: 1%;
+            font-weight: 400;
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2em;
+            min-width: 90%;
+            margin: auto;
+
+            .item-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-width: 25vw;
+                margin: 5% 10%;
+                min-height: 30vh;
+                background-color: $primary-color;
+                box-shadow: 0px 6px 5px #5a5a5a;
+
+
+
+                .item-image {
+                    min-width: 25vw;
+                    height: 40vh;
+                }
+
+                .item-description {
+                    padding: 1%;
+                    color: $accent-color;
+                    margin: 2% 0%;
+
+                    h3 {
+                        margin-top: 2%;
+                        margin-left: 5%;
+                        /* font-size: 16px; */
+
+                        .item-color,
+                        .item-qty,
+                        .item-size {
+                            font-weight: lighter;
+                        }
+
+                        .minus {
+                            border: none;
+                            cursor: pointer;
+                            outline: none;
+                            background-color: $accent-color;
+                            color: $primary-color;
+                            width: 20px;
+                            font-weight: 900;
+                            margin-right: 5px;
+                        }
+
+                        .add {
+                            border: none;
+                            cursor: pointer;
+                            outline: none;
+                            background-color: $accent-color;
+                            color: $primary-color;
+                            width: 20px;
+                            font-weight: 900;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .item-name {
+                        font-weight: bold;
+                        margin-left: 5%;
+                    }
+                }
+
+                .price-buy {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 7%;
+
+                    .price {
+                        background-color: $primary-color;
+                        color: $accent-color;
+                        width: 30%;
+                        text-align: center;
+                        padding: 16px;
+                        font-weight: 500;
+                    }
+
+                    .buy {
+                        outline: none;
+                        border: none;
+                        background-color: $primary-color;
+                        color: $accent-color;
+                        width: 50%;
+                        cursor: pointer;
+                        padding: auto;
+                        font-size: 18px;
+                        font-weight: 600;
+                        border-top: 1px solid $accent-color;
+                        border-left: 1px solid $accent-color;
+
+
+                        &:hover {
+                            transition: 1s ease;
+                            background-color: $accent-color;
+                            color: $primary-color;
+
+                        }
+                    }
+
 
                 }
 
