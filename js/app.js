@@ -1,9 +1,110 @@
+class Item {
+    constructor(image, name, price, color, qty, size) {
+        this.image = image,
+            this.name = name,
+            this.price = price,
+            this.color = color,
+            this.qty = qty,
+            this.size = size
+    }
+}
+
+class Local{
+    static getCartItem() {
+        let items;
+        if (localStorage.getItem('atlis') === null) {
+            items = [];
+        } else {
+            items = JSON.parse(localStorage.getItem('atlis'))
+        }
+        return items;
+    }
+
+    static addItem(item) {
+        const items = Local.getCartItem();
+        items.push(item);
+        localStorage.setItem('atlis', JSON.stringify(items))
+    }
+
+    static removeItem(name, image) {
+        const items = Local.getCartItem();
+        items.forEach((item, n) => {
+            if (item.name === name && item.image === image) {
+                items.splice(n, 1)
+
+            }
+        })
+        localStorage.setItem('atlis', JSON.stringify(items))
+    }
+}
+class UI {
+    static displayCart() {
+        const items = Local.getCartItem();
+        items.forEach(item => { UI.addItemToCart(item) })
+
+    }
+    static addItemToCart(item) {
+        const cartContainer = document.querySelector('.cart-container');
+        let cartItemContainer = document.createElement('div');
+        cartItemContainer.className = "cart-item-container";
+        cartItemContainer.innerHTML = `
+                <h3 class="delete">X</h3>
+                <img class="cart-item-image" src="${item.image}" alt="">
+                <div class="cart-item-description">
+                    <h3 class="cart-item-name">${item.name}</h3>
+                    <h3 class="cart-item-price"> ${item.price}</h3>
+                    <h3 class="cart-item-color">${item.color} </h3>
+                    <h3><span class="item-qty">${item.qty}</h3>
+                    <h3 class="cart-item-size">${item.size} </h3>
+                </div>
+
+        `
+        cartContainer.appendChild(cartItemContainer);
+
+
+
+    }
+    static deleteItem(e) {
+        if (e.target.className === 'delete') {
+            e.target.parentElement.remove();
+
+        }
+    }
+}
+
+document.addEventListener('click', e => {
+    const name = e.target.parentElement.parentElement.childNodes[1].childNodes[5].childNodes[1].innerText;
+    const image = e.target.parentElement.parentElement.childNodes[1].childNodes[3].currentSrc;
+    UI.deleteItem(e);
+    if (e.target.innerText === 'X') {
+        Local.removeItem(name, image);
+
+    }
+
+
+});
+
+const products = document.querySelectorAll('.buy');
+products.forEach(product => {
+    product.addEventListener('click', e => {
+        const image = e.target.parentElement.parentElement.childNodes[1].currentSrc;
+        const name = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[1].innerText;
+        const color = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[2].nextElementSibling.childNodes[1].innerText;
+        const qty = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[4].nextSibling.childNodes[2].innerText;
+        const size = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[7].childNodes[1].innerText;
+        const price = e.target.parentElement.parentElement.childNodes[5].firstChild.nextElementSibling.innerText;
+        const item = new Item(image, name, price, color, qty, size);
+        Local.addItem(item);
+
+
+    })
+})
 
 
 
 
 
-
+document.addEventListener('DOMContentLoaded', UI.displayCart);
 
 
 
