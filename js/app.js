@@ -78,6 +78,7 @@ document.addEventListener('click', e => {
     UI.deleteItem(e);
     if (e.target.innerText === 'X') {
         Local.removeItem(name, image);
+        bagContentCounter();
 
     }
 
@@ -95,15 +96,10 @@ products.forEach(product => {
         const price = e.target.parentElement.parentElement.childNodes[5].firstChild.nextElementSibling.innerText;
         const item = new Item(image, name, price, color, qty, size);
         Local.addItem(item);
-
+        bagContentCounter();
 
     })
 })
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', UI.displayCart);
 
 
@@ -195,3 +191,19 @@ counter = () => {
     })
 }
 counter();
+
+
+//Counts the number of items in the local storage and displays it
+bagContentCounter = () => {
+    const bagCount = document.querySelectorAll('.cart-number');
+
+    bagCount.forEach(addedContent => {
+        addedContent.innerText = 0;
+        addedContent.innerText = Local.getCartItem().length;
+        const item = Local.getCartItem();
+
+    })
+}
+bagContentCounter();
+
+
