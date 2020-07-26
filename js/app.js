@@ -67,6 +67,7 @@ class UI {
     static deleteItem(e) {
         if (e.target.className === 'delete') {
             e.target.parentElement.remove();
+            shoppingBagAnimation();
 
         }
     }
@@ -97,6 +98,7 @@ products.forEach(product => {
         const item = new Item(image, name, price, color, qty, size);
         Local.addItem(item);
         bagContentCounter();
+        shoppingBagAnimation();
 
     })
 })
@@ -207,3 +209,10 @@ bagContentCounter = () => {
 bagContentCounter();
 
 
+shoppingBagAnimation = () => {
+    const shoppingBag = document.querySelector('.shoppingBag');
+    shoppingBag.classList.add('shoppingBagAnimation');
+    setTimeout(() => {
+        shoppingBag.classList.remove('shoppingBagAnimation');
+    }, 1000);
+}
