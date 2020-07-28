@@ -41,6 +41,7 @@ class UI {
     static displayCart() {
         const items = Local.getCartItem();
         items.forEach(item => { UI.addItemToCart(item) })
+        cartTotal();
 
     }
     static addItemToCart(item) {
@@ -60,6 +61,7 @@ class UI {
 
         `
         cartContainer.appendChild(cartItemContainer);
+        cartTotal();
 
 
 
@@ -80,7 +82,7 @@ document.addEventListener('click', e => {
     if (e.target.innerText === 'X') {
         Local.removeItem(name, image);
         bagContentCounter();
-
+        cartTotal();
     }
 
 
@@ -99,6 +101,7 @@ products.forEach(product => {
         Local.addItem(item);
         bagContentCounter();
         shoppingBagAnimation();
+        cartTotal();
 
     })
 })
@@ -215,4 +218,20 @@ shoppingBagAnimation = () => {
     setTimeout(() => {
         shoppingBag.classList.remove('shoppingBagAnimation');
     }, 1000);
+}
+
+cartTotal = () => {
+    const container = document.getElementsByClassName('cart-container')[0];
+    const itemsContainer = container.getElementsByClassName('cart-item-container');
+    let total = 0;
+
+    for (let i = 0; i < itemsContainer.length; i++) {
+        const itemContainer = itemsContainer[i];
+        const itemPrice = itemContainer.getElementsByClassName('cart-item-price')[0];
+        const itemQty = itemContainer.getElementsByClassName('item-qty')[0];
+        let price = parseFloat(itemPrice.innerText.replace('£', ''));
+        let qty = itemQty.innerText;
+        total += price * qty;
+    }
+    document.querySelector('.total-price').innerText = '£' + total;
 }
