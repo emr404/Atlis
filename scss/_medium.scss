@@ -558,7 +558,112 @@
         }
     }
 
+    /******************
+                    CART
 
+******************************/
+
+    .cart-heading {
+        color: #02052C;
+        font-size: 30px;
+        margin-left: 2%;
+        margin-top: 2%;
+        font-weight: 400;
+    }
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        margin-top: 2%;
+        min-height: 35vh;
+
+        .cart-item-container {
+            display: flex;
+            background-color: white;
+            justify-content: space-between;
+            margin-top: 5%;
+            box-shadow: 0 5px 5px grey;
+            position: relative;
+
+
+            .cart-item-image {
+                height: 15vh;
+                width: 15vh;
+            }
+
+            .cart-item-description {
+                display: flex;
+                /* flex-direction: column; */
+                justify-content: space-evenly;
+                width: 100%;
+                align-items: center;
+                padding: 2%;
+
+                h3 {
+                    margin-top: 2%;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+
+            .delete {
+                position: absolute;
+                cursor: pointer;
+                right: 0;
+                color: red;
+                padding-right: 3%;
+                padding-top: 1%;
+                font-size: 20px;
+            }
+        }
+
+
+    }
+
+    .total-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 2% auto;
+
+        .total {
+            color: #02052C;
+            font-size: 28px;
+
+            .total-price {
+                color: #02052C;
+
+            }
+        }
+
+        .continue-shopping {
+            text-decoration: none;
+            color: #02052C;
+            border: 1px solid #02052C;
+            font-size: 18px;
+            width: 20%;
+            text-align: center;
+            padding: 2%;
+
+
+        }
+
+        .checkout {
+            text-decoration: none;
+            color: white;
+            background-color: #02052C;
+            font-size: 18px;
+            width: 16%;
+            text-align: center;
+            padding: 2%;
+            margin-right: 2%;
+
+
+        }
+    }
 
 
 
