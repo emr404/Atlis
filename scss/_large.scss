@@ -549,6 +549,7 @@
         }
     }
 
+
     /*============NewsLetter=======================*/
     .newsletter {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/news.jpg');
@@ -585,6 +586,110 @@
             cursor: pointer;
         }
 
+    }
+
+    /******************
+                    CART
+
+******************************/
+
+    .cart-heading {
+        color: #02052C;
+        font-size: 40px;
+        margin-left: 10%;
+        margin-top: 2%;
+        font-weight: 400;
+    }
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        margin-top: 2%;
+        min-height: 35vh;
+
+        .cart-item-container {
+            display: flex;
+            background-color: white;
+            justify-content: space-between;
+            margin-top: 2%;
+            box-shadow: 0 5px 5px grey;
+            position: relative;
+
+
+            .cart-item-image {
+                height: 20vh;
+                width: 15vw;
+            }
+
+            .cart-item-description {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                padding: 5%;
+
+                h3 {
+                    font-weight: 400;
+                }
+            }
+
+            .delete {
+                position: absolute;
+                cursor: pointer;
+                right: 0;
+                color: red;
+                padding-right: 3%;
+                padding-top: 1%;
+                font-size: 25px;
+            }
+        }
+
+
+    }
+
+    .total-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 2% auto;
+
+        .total {
+            color: #02052C;
+            font-size: 28px;
+
+            .total-price {
+                color: #02052C;
+
+            }
+        }
+
+        .continue-shopping {
+            text-decoration: none;
+            color: #02052C;
+            border: 1px solid #02052C;
+            font-size: 18px;
+            width: 20%;
+            text-align: center;
+            padding: 2%;
+
+
+        }
+
+        .checkout {
+            text-decoration: none;
+            color: white;
+            background-color: #02052C;
+            font-size: 18px;
+            width: 16%;
+            text-align: center;
+            padding: 2%;
+            margin-right: 2%;
+
+
+        }
     }
 
 
