@@ -304,6 +304,127 @@
         }
     }
 
+    /******************
+                    CATEGORIES PAGE
+
+******************************/
+    .category-container {
+        h1 {
+            color: $accent-color;
+            font-size: 40px;
+            font-weight: 400;
+            margin-left: 10%;
+            padding-top: 2%;
+        }
+
+        .category-items-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 80%;
+            justify-content: center;
+            margin: 3% auto;
+
+            .category-item-container {
+                position: relative;
+
+                .img-darken {
+                    transition: 1s;
+                    filter: brightness(10%);
+                }
+
+                .category-link {
+                    opacity: 1;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    top: 40%;
+                    width: 100%;
+
+                    a {
+                        text-decoration: none;
+                        color: $accent-color;
+                        padding: 5%;
+                        background: rgba(255, 255, 255, 0.1);
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        transition: .3s ease;
+                        padding: 7%;
+                        background: $primary-color;
+                    }
+                }
+
+                .category-img {
+                    height: 40vh;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .sofa {
+                    background-image: url(../images/sofa.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+                .lamp {
+                    background-image: url(../images/lamp2.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+                .bed {
+                    background-image: url(../images/bed.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+                .dining {
+                    background-image: url(../images/dining.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+                .chair {
+                    background-image: url(../images/c.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+
+                .office {
+                    background-image: url(../images/office.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+                .bath {
+                    background-image: url(../images/bath.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+
+                }
+
+            }
+        }
+    }
+
     /*============NewsLetter=======================*/
     .newsletter {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/news.jpg');
