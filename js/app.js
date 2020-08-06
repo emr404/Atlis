@@ -1,3 +1,4 @@
+"use strict";
 class Item {
     constructor(image, name, price, color, qty, size) {
         this.image = image,
@@ -131,7 +132,7 @@ burger.addEventListener('click', () => {
 })
 
 //Count down clock for summer sales
-countDown = () => {
+const countDown = () => {
     const countDownDate = new Date("Sep 5, 2020 17:00:00").getTime();
     const interval = setInterval(() => {
         const now = new Date().getTime();
@@ -173,7 +174,7 @@ imageBackground.forEach(image => {
 });
 
 // Counter for quantity of items
-counter = () => {
+const counter = () => {
     const increase = document.querySelectorAll('.add');
     const decrease = document.querySelectorAll('.minus');
     increase.forEach(increment => {
@@ -199,7 +200,7 @@ counter();
 
 
 //Counts the number of items in the local storage and displays it
-bagContentCounter = () => {
+const bagContentCounter = () => {
     const bagCount = document.querySelectorAll('.cart-number');
 
     bagCount.forEach(addedContent => {
@@ -212,7 +213,7 @@ bagContentCounter = () => {
 bagContentCounter();
 
 
-shoppingBagAnimation = () => {
+const shoppingBagAnimation = () => {
     const shoppingBag = document.querySelector('.shoppingBag');
     shoppingBag.classList.add('shoppingBagAnimation');
     setTimeout(() => {
@@ -220,7 +221,7 @@ shoppingBagAnimation = () => {
     }, 1000);
 }
 
-cartTotal = () => {
+const cartTotal = () => {
     const container = document.getElementsByClassName('cart-container')[0];
     const itemsContainer = container.getElementsByClassName('cart-item-container');
     let total = 0;
