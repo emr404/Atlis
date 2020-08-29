@@ -1,14 +1,16 @@
 "use strict";
 class Item {
-    constructor(image, name, price, color, qty, size) {
+    constructor(image, name, price, color, qty, size,time) {
         this.image = image,
             this.name = name,
             this.price = price,
             this.color = color,
             this.qty = qty,
-            this.size = size
+            this.size = size,
+            this.time = time
     }
 }
+
 
 class Local{
     static getCartItem() {
@@ -20,6 +22,7 @@ class Local{
         }
         return items;
     }
+    
 
     static addItem(item) {
         const items = Local.getCartItem();
@@ -27,10 +30,10 @@ class Local{
         localStorage.setItem('atlis', JSON.stringify(items))
     }
 
-    static removeItem(name, image) {
+    static removeItem(time) {
         const items = Local.getCartItem();
         items.forEach((item, n) => {
-            if (item.name === name && item.image === image) {
+            if (item.time == time) {
                 items.splice(n, 1)
 
             }
@@ -58,6 +61,7 @@ class UI {
                     <h3 class="cart-item-color">${item.color} </h3>
                     <h3><span class="item-qty">${item.qty}</h3>
                     <h3 class="cart-item-size">${item.size} </h3>
+                    <h3 class="cart-item-size" style='color:white'>${item.time} </h3>
                 </div>
 
         `
@@ -79,9 +83,11 @@ class UI {
 document.addEventListener('click', e => {
     const name = e.target.parentElement.parentElement.childNodes[1].childNodes[5].childNodes[1].innerText;
     const image = e.target.parentElement.parentElement.childNodes[1].childNodes[3].currentSrc;
+    const time = e.target.parentElement.parentElement.childNodes[1].childNodes[5].childNodes[11].innerText
+    console.log(time)
     UI.deleteItem(e);
     if (e.target.innerText === 'X') {
-        Local.removeItem(name, image);
+        Local.removeItem(time);
         bagContentCounter();
         cartTotal();
     }
@@ -98,7 +104,10 @@ products.forEach(product => {
         const qty = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[4].nextSibling.childNodes[2].innerText;
         const size = e.target.parentElement.parentElement.childNodes[2].nextElementSibling.childNodes[7].childNodes[1].innerText;
         const price = e.target.parentElement.parentElement.childNodes[5].firstChild.nextElementSibling.innerText;
-        const item = new Item(image, name, price, color, qty, size);
+        const date = new Date;
+        const time = date.getTime()
+        const item = new Item(image, name, price, color, qty, size,time);
+        
         Local.addItem(item);
         bagContentCounter();
         shoppingBagAnimation();
