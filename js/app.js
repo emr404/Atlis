@@ -61,7 +61,7 @@ class UI {
                     <h3 class="cart-item-color">${item.color} </h3>
                     <h3><span class="item-qty">${item.qty}</h3>
                     <h3 class="cart-item-size">${item.size} </h3>
-                    <h3 class="cart-item-size" style='color:white'>${item.time} </h3>
+                    <p class="cart-item-size" style='color:white;font-size: 1px'>${item.time} </p>
                 </div>
 
         `
