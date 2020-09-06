@@ -142,7 +142,7 @@ burger.addEventListener('click', () => {
 
 //Count down clock for summer sales
 const countDown = () => {
-    const countDownDate = new Date("Sep 5, 2020 17:00:00").getTime();
+    const countDownDate = new Date("Oct 20, 2020 17:00:00").getTime();
     const interval = setInterval(() => {
         const now = new Date().getTime();
         const difference = countDownDate - now;
